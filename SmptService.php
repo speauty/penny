@@ -8,9 +8,8 @@
 
 /**
  * Class Smtp
- * It's awkward to copy code without author, if you know, please contact me, I will insert to this script.
- * But the script copied too simple, not easy to read, so I decided to optimize it now.
- * This is a email sender you may want.
+ * 参考https://segmentfault.com/a/1190000014789528
+ * 在这个基础上,我主要强调了命名的规范性, 和增加一些注释, 方便个人理解使用
  */
 class SmtpService
 {
@@ -32,7 +31,7 @@ class SmtpService
     private $smtpAccount = '';
     /** SMTP服务密码 */
     private $smtpPass = '';
-    /** SOCK记录 */
+    /** SOCK */
     private $sock = null;
 
     /**
@@ -127,7 +126,6 @@ class SmtpService
         }
         if ($extArgs['bcc'] != "") {
             $toMailArr = array_merge($toMailArr, explode(",", $this->removeSpecialCharsFromStr($extArgs['bcc'])));
-
         }
         $sent = true;
 
